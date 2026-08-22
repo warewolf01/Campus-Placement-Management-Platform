@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Dashboard — placementhub</title>
+  <link rel="stylesheet" href="css/student.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a href="../index.html" class="brand">placement<span style="color:#1d4ed8">hub</span></a>
+      <nav class="nav">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="applications.html">Applications</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div id="logoutBtn"><a href="../index.html" class="btn-outline">Logout</a></div>
+    </aside>
+
+    <main class="main container">
+      <div class="header-row">
+        <div>
+          <h2 id="welcome">Welcome</h2>
+          <div id="studentEmail" style="color:var(--muted)"></div>
+        </div>
+      </div>
+
+      <div class="stats" id="statsRow">
+        <!-- Stats populated by JS -->
+      </div>
+
+      <div style="margin-top:18px">
+        <h3>Recommended Jobs</h3>
+        <div class="recommended" id="recommendedJobs"></div>
+      </div>
+
+      <div class="card readiness" style="margin-top:18px">
+        <h3>Placement Readiness</h3>
+        <div class="readiness">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div id="readinessPercent">0%</div>
+            <div style="color:var(--muted);font-size:0.9rem">Simple score shown here</div>
+          </div>
+          <div class="progress mt-8" style="margin-top:8px">
+            <span id="progressBar" style="width:0%"></span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

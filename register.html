@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>placementhub — Student Registration</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Inline styles for the registration form — match existing form inputs */
+    .register-container{max-width:700px;margin:28px auto;background:#ffffff;padding:20px;border-radius:12px;border:1px solid #e6eef8}
+    .form-group{margin-bottom:12px}
+    .form-group label{display:block;margin-bottom:6px;font-weight:600}
+    .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="password"], .form-group input[type="number"], .form-group select, .form-group input[type="search"]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #e6eef8;font-family:inherit}
+    .skills-group{margin:8px 0;padding:8px;border-radius:8px;border:1px solid #f1f5f9;background:#fbfdff}
+    .skills-group label{display:inline-block;margin-right:10px;font-weight:400}
+    .other-skill{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #e6eef8}
+    .btn-register{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(180deg,#2563eb,#1d4ed8);color:#fff;border:0;font-weight:700}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="register-container">
+      <h2>Student Registration</h2>
+
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required />
+        </div>
+
+        <div class="form-group">
+          <label for="branch">Branch</label>
+          <select id="branch" name="branch" required>
+            <option value="">Select branch</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="ME">ME</option>
+            <option value="EE">EE</option>
+            <option value="Civil">Civil</option>
+            <option value="IT">IT</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cgpa">CGPA</label>
+          <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" required />
+        </div>
+
+        <!-- Skills groups: hidden by default -->
+        <div id="skillsCSE" class="skills-group" style="display:none">
+          <strong>CSE Skills</strong><br />
+          <label><input type="checkbox" value="JavaScript" /> JavaScript</label>
+          <label><input type="checkbox" value="Python" /> Python</label>
+          <label><input type="checkbox" value="Java" /> Java</label>
+          <label><input type="checkbox" value="C++" /> C++</label>
+          <label><input type="checkbox" value="React" /> React</label>
+          <label><input type="checkbox" value="Node.js" /> Node.js</label>
+          <label><input type="checkbox" value="SQL" /> SQL</label>
+          <label><input type="checkbox" value="Machine Learning" /> Machine Learning</label>
+          <label><input type="checkbox" value="Data Structures" /> Data Structures</label>
+          <label><input type="checkbox" value="HTML/CSS" /> HTML/CSS</label>
+        </div>
+
+        <div id="skillsECE" class="skills-group" style="display:none">
+          <strong>ECE Skills</strong><br />
+          <label><input type="checkbox" value="Embedded Systems" /> Embedded Systems</label>
+          <label><input type="checkbox" value="VLSI" /> VLSI</label>
+          <label><input type="checkbox" value="Circuit Design" /> Circuit Design</label>
+          <label><input type="checkbox" value="MATLAB" /> MATLAB</label>
+          <label><input type="checkbox" value="Microcontrollers" /> Microcontrollers</label>
+          <label><input type="checkbox" value="IoT" /> IoT</label>
+          <label><input type="checkbox" value="Communication Systems" /> Communication Systems</label>
+        </div>
+
+        <div id="skillsEE" class="skills-group" style="display:none">
+          <strong>EE Skills</strong><br />
+          <label><input type="checkbox" value="Power Systems" /> Power Systems</label>
+          <label><input type="checkbox" value="Circuit Analysis" /> Circuit Analysis</label>
+          <label><input type="checkbox" value="MATLAB" /> MATLAB</label>
+          <label><input type="checkbox" value="PLC Programming" /> PLC Programming</label>
+          <label><input type="checkbox" value="Electrical Machines" /> Electrical Machines</label>
+          <label><input type="checkbox" value="Control Systems" /> Control Systems</label>
+        </div>
+
+        <div id="skillsME" class="skills-group" style="display:none">
+          <strong>ME Skills</strong><br />
+          <label><input type="checkbox" value="AutoCAD" /> AutoCAD</label>
+          <label><input type="checkbox" value="SolidWorks" /> SolidWorks</label>
+          <label><input type="checkbox" value="Thermodynamics" /> Thermodynamics</label>
+          <label><input type="checkbox" value="CAD/CAM" /> CAD/CAM</label>
+          <label><input type="checkbox" value="ANSYS" /> ANSYS</label>
+          <label><input type="checkbox" value="Manufacturing Processes" /> Manufacturing Processes</label>
+        </div>
+
+        <div id="skillsCivil" class="skills-group" style="display:none">
+          <strong>Civil Skills</strong><br />
+          <label><input type="checkbox" value="AutoCAD" /> AutoCAD</label>
+          <label><input type="checkbox" value="Structural Analysis" /> Structural Analysis</label>
+          <label><input type="checkbox" value="STAAD Pro" /> STAAD Pro</label>
+          <label><input type="checkbox" value="Surveying" /> Surveying</label>
+          <label><input type="checkbox" value="Construction Management" /> Construction Management</label>
+          <label><input type="checkbox" value="Revit" /> Revit</label>
+        </div>
+
+        <div class="form-group">
+          <label for="otherSkill">Other skill (optional)</label>
+          <input type="text" id="otherSkill" class="other-skill" />
+        </div>
+
+        <div class="form-group">
+          <button type="submit" id="registerBtn" class="btn-register">Register</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/register.js"></script>
+</body>
+</html>
