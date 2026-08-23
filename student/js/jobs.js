@@ -8,12 +8,6 @@ function isEligible(student, job) {
     return branchEligible && cgpaEligible;
 }
 
-//--> testing isEligible() function//
-
-// console.log(allJobs.map(job => ({
-//     company: job.company,
-//     eligible: isEligible(currentStudent, job)
-// })));
 
 function calculateSkillMatch(student,job){
     let matchedSkills = 0;
@@ -24,6 +18,35 @@ function calculateSkillMatch(student,job){
     });
 
     return Math.round((matchedSkills / job.requiredSkills.length) * 100);
+}
+
+function createApplication(student, job) {
+    return {
+        id: Date.now(),
+        studentEmail: student.email,
+        jobId: job.id,
+        company: job.company,
+        role: job.role,
+        status: "Applied",
+        appliedAt: new Date().toLocaleDateString()
+    };
+}
+
+function saveApplication(application) {
+    const applications = getAllApplications();
+
+    applications.push(application);
+
+    localStorage.setItem("applications",JSON.stringify(applications));
+}
+
+function hasAlreadyApplied(student, job) {
+    const applications = getAllApplications();
+
+    return applications.some(function(application) {
+        return application.studentEmail === student.email &&
+               application.jobId === job.id;
+    });
 }
 
 
@@ -127,7 +150,24 @@ function renderJobs() {
                 </button>
             </div>
         `;
+
         jobsContainer.appendChild(jobCard);
+
+        const applyButton = jobCard.querySelector(".btn-apply");
+        applyButton.addEventListener("click",function(){
+            if (!isEligible(currentStudent, job)) {
+                // console.log("Student is not eligible for this job.");
+                alert("Student is not eligible for this job.");
+                return;
+            }
+
+            if(hasAlreadyApplied(currentStudent,job)){
+                alert("Already Applied");
+                return;
+            }
+            const application = createApplication(currentStudent,job);
+            saveApplication(application);
+        });
     });
 }
 
