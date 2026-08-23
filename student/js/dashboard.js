@@ -4,8 +4,7 @@ if (currentStudent) {
     document.getElementById("welcome").textContent =
         `Welcome, ${currentStudent.name}`;
 
-    // document.getElementById("studentEmail").textContent =
-    //     currentStudent.email;
+
 }
 
 
