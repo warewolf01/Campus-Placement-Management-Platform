@@ -1,6 +1,3 @@
-// JavaScript for student registration page
-// Follow the project's required plain-style coding conventions.
-
 // Get references to DOM elements used by the registration logic
 function getElements(){
   return {
@@ -90,7 +87,6 @@ function collectSkills(){
   // include other skill if provided
   var other = els.otherSkillEl.value;
   if (other){
-    // trim whitespace — use simple approach to remain ES5-compatible
     var trimmed = other.replace(/^\s+|\s+$/g, '');
     if (trimmed !== ''){
       skills.push(trimmed);
@@ -113,26 +109,22 @@ function handleRegister(){
     var branch = els.branchEl.value;
     var cgpaRaw = els.cgpaEl.value;
 
-    // Basic validations: required fields
     if (!name || !email || !password || !confirm || !branch || cgpaRaw === ''){
       alert('Please fill all required fields.');
       return;
     }
 
-    // password match check
     if (password !== confirm){
       alert('Password and Confirm Password do not match.');
       return;
     }
 
-    // parse cgpa as number
     var cgpa = parseFloat(cgpaRaw);
     if (isNaN(cgpa)){
       alert('CGPA must be a valid number.');
       return;
     }
 
-    // load existing students
     var studentsRaw = localStorage.getItem('students');
     var students = [];
     if (studentsRaw){
@@ -143,7 +135,7 @@ function handleRegister(){
       }
     }
 
-    // duplicate email check using .find()
+
     var dup = students.find(function(s){ return s.email === email; });
     if (dup){
       alert('An account with this email already exists.');

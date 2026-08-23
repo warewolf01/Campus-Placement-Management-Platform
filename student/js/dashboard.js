@@ -1,14 +1,16 @@
-const currentStudent = localStorage.getItem("currentStudent");
+const currentStudent = authGuard();
 
-if (!currentStudent) {
-    alert("You are not logged in. Redirecting to login page.");
-    window.location.href = "../login.html";
+if (currentStudent) {
+    document.getElementById("welcome").textContent =
+        `Welcome, ${currentStudent.name}`;
+
+    // document.getElementById("studentEmail").textContent =
+    //     currentStudent.email;
 }
 
-const logoutBtn = document.getElementById('logoutBtn');
 
-logoutBtn.addEventListener('click', function(e) {
+// Handle logout
+document.getElementById("logoutBtn").addEventListener("click", function (e) {
     e.preventDefault();
-    localStorage.removeItem('currentStudent');
-    window.location.href = '../index.html';
+    logout();
 });
