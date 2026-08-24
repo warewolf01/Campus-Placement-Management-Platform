@@ -19,7 +19,7 @@
       <div id="logoutBtn"><button type="button" class="btn-outline" onclick="logout()">Logout</button></div>
     </aside>
 
-    <main class="main container">
+    <main class="main container dashboard-page">
       <div class="header-row">
         <div>
           <h2 id="welcome">Welcome</h2>
@@ -27,17 +27,34 @@
         </div>
       </div>
 
-      <div class="stats" id="statsRow">
+      <section class="dashboard-section dashboard-overview" aria-labelledby="overviewHeading">
+        <h3 id="overviewHeading">Application Overview</h3>
+        <div class="stats" id="statsRow">
         <!-- Stats populated by JS -->
-      </div>
+        </div>
+      </section>
 
-      <div style="margin-top:18px">
-        <h3>Recommended Jobs</h3>
+      <section class="dashboard-section eligibility-section" aria-labelledby="eligibilityHeading">
+        <h3 id="eligibilityHeading">Eligibility Snapshot</h3>
+        <div class="card eligibility-snapshot" id="eligibilitySnapshot">
+          <!-- Eligibility information populated by JS -->
+        </div>
+      </section>
+
+      <section class="dashboard-section deadlines-section" aria-labelledby="deadlinesHeading">
+        <h3 id="deadlinesHeading">Upcoming Deadlines</h3>
+        <div class="deadline-list" id="upcomingDeadlines">
+          <!-- Upcoming deadlines populated by JS -->
+        </div>
+      </section>
+
+      <section class="dashboard-section recommended-section" aria-labelledby="recommendedHeading">
+        <h3 id="recommendedHeading">Recommended Jobs</h3>
         <div class="recommended" id="recommendedJobs"></div>
-      </div>
+      </section>
 
-      <div class="card readiness" style="margin-top:18px">
-        <h3>Placement Readiness</h3>
+      <!-- <section class="card readiness dashboard-section" aria-labelledby="readinessHeading">
+        <h3 id="readinessHeading">Placement Readiness</h3>
         <div class="readiness">
           <div style="display:flex;align-items:center;justify-content:space-between">
             <div id="readinessPercent">0%</div>
@@ -47,7 +64,7 @@
             <span id="progressBar" style="width:0%"></span>
           </div>
         </div>
-      </div>
+      </section> -->
 
     </main>
   </div>

@@ -15,7 +15,7 @@
     }
 
     myApplications.forEach(application => {
-        console.log("APPLICATION:", application);
+        // console.log("APPLICATION:", application);
         
         const card = template.content.cloneNode(true);
 

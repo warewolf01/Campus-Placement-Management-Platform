@@ -34,9 +34,30 @@ body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, A
 .header-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
 
 /* Dashboard summary */
-.stats{display:flex;gap:12px;margin-top:14px}
-.stat{flex:1;padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);text-align:center;border:1px solid var(--border)}
-.stat strong{display:block;font-size:1.6rem}
+.dashboard-section{margin-top:22px}
+.dashboard-section > h3{margin:0 0 12px;font-size:1.05rem}
+.dashboard-overview{margin-top:20px}
+.dashboard-page .stats{display:flex;gap:12px;margin-top:0}
+.dashboard-page .stat{flex:1;padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);text-align:center;border:1px solid var(--border)}
+.dashboard-page .stat strong{display:block;font-size:1.6rem}
+
+.dashboard-page .eligibility-snapshot{min-height:76px;display:flex;align-items:center}
+.dashboard-page .deadline-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.dashboard-page .deadline-card{padding:14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);box-shadow:0 6px 18px rgba(2,6,23,0.03)}
+.dashboard-page .deadline-card h4{margin:0;color:#0f172a;font-size:1rem}
+.dashboard-page .deadline-card p{margin:6px 0 0;color:var(--muted);font-size:0.9rem}
+.dashboard-page .deadline-card .deadline-date{margin-top:12px;color:var(--blue-600);font-size:0.85rem;font-weight:600}
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    min-height: 120px;
+    width: 100%;
+    box-sizing: border-box;
+}
 
 .recommended{display:flex;gap:10px;margin-top:12px}
 .rec-job{padding:8px 12px;border-radius:10px;border:1px solid var(--border);background:var(--surface)}
@@ -44,6 +65,9 @@ body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, A
 .readiness{margin-top:16px}
 .progress{height:12px;background:linear-gradient(90deg,#e9f4ff,#f8fbff);border-radius:8px;overflow:hidden;border:1px solid var(--border)}
 .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--blue-600));}
+
+.recommended-section .recommended{margin-top:0}
+.readiness.dashboard-section{margin-top:22px}
 
 /* Jobs list */
 .controls{display:flex;gap:12px;align-items:center;margin-bottom:14px}
@@ -79,9 +103,11 @@ input[type=text], input[type=email], input[type=number], textarea{padding:8px;bo
   .nav{display:flex;gap:8px}
   .main{padding:16px}
   .app-item dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dashboard-page .deadline-list{grid-template-columns:1fr}
 }
 
 @media (max-width:520px){
+  .dashboard-page .stats{flex-direction:column}
   .app-item{padding:16px}
   .app-item dl{grid-template-columns:1fr;gap:12px}
 }
