@@ -27,6 +27,8 @@ function createApplication(student, job) {
         jobId: job.id,
         company: job.company,
         role: job.role,
+        location: job.location,
+        package: job.salary,
         status: "Applied",
         appliedAt: new Date().toLocaleDateString()
     };
@@ -173,13 +175,3 @@ function renderJobs() {
 
 renderJobs();
 
-
-// ${job.requiredSkills.map(function(skill) {
-//     const matched = currentStudent.skills.includes(skill);
-
-//     const skillClass = matched
-//         ? "skill-tag matched"
-//         : "skill-tag unmatched";
-
-//     return `<span class="${skillClass}">${skill}</span>`;
-// }).join("")}

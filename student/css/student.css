@@ -54,9 +54,15 @@ body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, A
 .job-actions{display:flex;gap:8px;margin-top:8px}
 
 /* Applications list */
-.app-list{display:flex;flex-direction:column;gap:10px}
-.app-item{padding:12px;border-radius:10px;border:1px solid var(--border);background:var(--surface)}
-.status{font-weight:600;color:var(--blue-600)}
+.app-list{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.app-item{padding:20px;border-radius:12px;border:1px solid var(--border);background:var(--surface);box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+.app-item h2{margin:0;color:#0f172a;font-size:1.15rem}
+.app-item > p{margin:6px 0 18px;color:var(--muted);font-size:0.95rem}
+.app-item dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0;padding-top:16px;border-top:1px solid var(--border)}
+.app-item dl > div{min-width:0;display:flex;flex-direction:column;gap:5px}
+.app-item dt{color:var(--muted);font-size:0.75rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+.app-item dd{margin:0;color:#0f172a;font-size:0.95rem;font-weight:500;overflow-wrap:anywhere}
+.app-item .status{font-weight:600;color:var(--blue-600)}
 
 /* Profile form */
 .form-row{display:flex;gap:12px}
@@ -64,6 +70,7 @@ body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, A
 input[type=text], input[type=email], input[type=number], textarea{padding:8px;border-radius:8px;border:1px solid var(--border)}
 .btn{display:inline-block;padding:8px 12px;border-radius:8px;border:none;background:var(--blue);color:#fff;text-decoration:none}
 .btn-outline{background:transparent;border:1px solid var(--border);color:var(--blue-600)}
+#logoutBtn .btn-outline{cursor:pointer;transition:background-color 0.2s ease,color 0.2s ease}
 
 /* Responsive */
 @media (max-width:900px){
@@ -71,4 +78,10 @@ input[type=text], input[type=email], input[type=number], textarea{padding:8px;bo
   .sidebar{width:100%;display:flex;gap:12px;align-items:center}
   .nav{display:flex;gap:8px}
   .main{padding:16px}
+  .app-item dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media (max-width:520px){
+  .app-item{padding:16px}
+  .app-item dl{grid-template-columns:1fr;gap:12px}
 }
