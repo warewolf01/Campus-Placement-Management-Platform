@@ -55,8 +55,3 @@ statsRow.innerHTML = `
 
 
 
-// Handle logout
-document.getElementById("logoutBtn").addEventListener("click", function (e) {
-    e.preventDefault();
-    logout();
-});
