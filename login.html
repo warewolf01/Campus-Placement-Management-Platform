@@ -3,146 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Student Login</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: #f5f7fb;
-        }
-
-        .login-container {
-            width: 420px;
-            padding: 35px;
-
-            background: white;
-            border-radius: 12px;
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .login-container h1 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #222;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 7px;
-
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-
-            border: 1px solid #ccc;
-            border-radius: 7px;
-
-            font-size: 15px;
-            outline: none;
-        }
-
-        .form-group input:focus {
-            border-color: #4f46e5;
-        }
-
-        #loginBtn {
-            width: 100%;
-            padding: 12px;
-
-            margin-top: 5px;
-
-            border: none;
-            border-radius: 7px;
-
-            background: #4f46e5;
-            color: white;
-
-            font-size: 16px;
-            font-weight: 600;
-
-            cursor: pointer;
-        }
-
-        #loginBtn:hover {
-            background: #4338ca;
-        }
-
-        .register-link {
-            text-align: center;
-            margin-top: 20px;
-
-            font-size: 14px;
-            color: #555;
-        }
-
-        .register-link a {
-            color: #4f46e5;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .register-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Student Login — placementhub</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
+<body class="auth-page">
 
-<body>
-
-    <div class="login-container">
-
-        <h1>Student Login</h1>
-
-        <div class="form-group">
-            <label for="loginEmail">Email</label>
-            <input
-                type="email"
-                id="loginEmail"
-                placeholder="Enter your email"
-            >
+    <div class="auth-card">
+        <div class="auth-header">
+            <a href="index.html" class="auth-brand">placement<span>hub</span></a>
+            <h1 class="auth-title">Welcome back</h1>
+            <p class="auth-subtitle">Student Login</p>
         </div>
 
-        <div class="form-group">
-            <label for="loginPassword">Password</label>
-            <input
-                type="password"
-                id="loginPassword"
-                placeholder="Enter your password"
-            >
+        <div class="auth-form">
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input
+                    type="email"
+                    id="loginEmail"
+                    class="auth-input"
+                    placeholder="Enter your email"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    class="auth-input"
+                    placeholder="Enter your password"
+                >
+            </div>
+
+            <button type="button" id="loginBtn" class="auth-btn">
+                Login
+            </button>
         </div>
 
-        <button type="button" id="loginBtn">
-            Login
-        </button>
-
-        <p class="register-link">
-            Don't have an account?
-            <a href="register.html">Register</a>
-        </p>
-
+        <div class="auth-footer">
+            Don't have an account? <a href="register.html">Register</a>
+        </div>
     </div>
 
     <script src="js/login.js"></script>
