@@ -22,3 +22,11 @@ function adminAuthGuard() {
 
     return admin;
 }
+
+// Admin Logout
+function adminLogout() {
+
+    localStorage.removeItem("currentAdmin");
+
+    window.location.href = "../login.html";
+}
