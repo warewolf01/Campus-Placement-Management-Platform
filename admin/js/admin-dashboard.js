@@ -116,4 +116,20 @@ function toggleBlock(email) {
 
 // ---------- page start ----------
 
+const currentAdmin = adminAuthGuard();
 
+if (currentAdmin) {
+    document.getElementById("adminEmail").textContent = "Signed in as " + currentAdmin.email;
+    showStats();
+    showBranchTable();
+    showStudents();
+}
+
+// one listener for the whole table; the clicked button carries the student's email
+document.getElementById("studentsBody").addEventListener("click", function (event) {
+    const email = event.target.getAttribute("data-email");
+
+    if (email) {
+        toggleBlock(email);
+    }
+});
