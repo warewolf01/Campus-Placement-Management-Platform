@@ -8,3 +8,17 @@ function getCurrentAdmin() {
 
     return JSON.parse(adminData);
 }
+
+// Protect Admin pages
+function adminAuthGuard() {
+
+    const admin = getCurrentAdmin();
+
+    if (!admin) {
+        alert("You are not logged in as an admin. Redirecting to login page.");
+
+        window.location.href = "../login.html";
+    }
+
+    return admin;
+}
