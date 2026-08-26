@@ -119,7 +119,6 @@ function toggleBlock(email) {
 const currentAdmin = adminAuthGuard();
 
 if (currentAdmin) {
-    document.getElementById("adminEmail").textContent = "Signed in as " + currentAdmin.email;
     showStats();
     showBranchTable();
     showStudents();
