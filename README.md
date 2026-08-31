@@ -168,8 +168,6 @@ Administrators can also:
 - VS Code
 - Live Server
 
-No backend server or external database is currently required for Phase 1.
-
 ---
 
 ## 📁 Project Structure
